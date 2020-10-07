@@ -1,0 +1,6 @@
+#   symbols.txt - user-editable config file
+symbols.txt
+credentials.js
+markets.js
+
+node_modules/

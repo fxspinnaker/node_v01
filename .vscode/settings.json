@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.deploySubpath": ".",
+    "appService.defaultWebAppToDeploy": "/subscriptions/05ef66bc-1d3c-4300-84ee-f686499713b8/resourceGroups/web-apps-test-uk/providers/Microsoft.Web/sites/mot-binance-test"
+}
