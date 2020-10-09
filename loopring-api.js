@@ -51,6 +51,16 @@ export default {
             method: 'delete', 
             headers: { 'X-API-KEY': apiKey, 'X-API-SIG': `${cancel.signature.Rx},${cancel.signature.Ry},${cancel.signature.s}` } 
         }).then(res => {
+            if ((res.status < 200) || (res.status >= 300)) {
+                const title = `LoopringAPI.cancelByHash ${time}`
+                console.log(title.bgRed.brightWhite + ' - ' + `Status = ${res.status}`.brightRed + `\n`)
+            }
+            else {
+                const now = new Date()
+                const time = ("00" + now.getHours()).slice(-2) + ":" + ("00" + now.getMinutes()).slice(-2) + ":" + ("00" + now.getSeconds()).slice(-2) + "." + ("000" + now.getMilliseconds()).slice(-3)
+                console.log(`LoopringAPI.cancelByHash`.brightGreen + ' ' + time.green + ' - ' + `Status = ${res.status}`.brightWhite + `\n`)
+            }
+
             return res.json()
         }).catch(err => { console.log(`fetch.catch.err`, err) })
     }
